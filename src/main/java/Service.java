@@ -30,7 +30,17 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+    public Student findStudentByLastName(String lastName) {
+        try {
+            Collection<Student> students = getStudents();
+            for (Student student : students) {
+                if (student.getLastName().equalsIgnoreCase(lastName)) {
+                    return student;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
   }
-}

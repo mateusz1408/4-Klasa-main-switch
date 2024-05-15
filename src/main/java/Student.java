@@ -14,6 +14,9 @@ public class Student {
   
   public String ToString() {
            return FirstName + " " + LastName + " " + Age + " " + Datauro;
+  }
+    public String getLastName() {
+      return LastName;
     }
 
   public static Student Parse(String str) {
