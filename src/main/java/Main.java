@@ -12,14 +12,15 @@ class Main {
 
       switch(funkcja) {
        case"1":
-        System.out.println("Podaj imie studenta:");
+          System.out.println("Podaj imie studenta:");
         String imie = scanner.nextLine();
-        System.out.println("Podaj wiek studenta:");
+          System.out.println("Podaj wiek studenta:");
         int wiek = scanner.nextInt();
-          String nazwisko1 = scanner.nextLine();
-           System.out.println("Podaj nazwisko studenta:");
-        scanner.nextLine();
-      service.addStudent(new Student(imie, nazwisko1, wiek));
+          System.out.println("Podaj nazwisko studenta:");
+        String nazwisko1 = scanner.nextLine();
+          System.out.println("Podaj date urodzenia studenta (DD-MM-YYYY):");
+        String datauro = scanner.nextLine();
+      service.addStudent(new Student(imie, nazwisko1, wiek, datauro));
       break;
        case"2":
         var students = service.getStudents();
@@ -37,14 +38,17 @@ class Main {
           System.out.println("Podaj wiek:");
           int wiek1 = scanner.nextInt();
           scanner.nextLine();
+          System.out.println("Podaj date urodzenia (DD-MM-YYYY):");
+          String datauro1 = scanner.nextLine();
 
-          String nazwa = imie1 + " " + nazwisko;
-          service.addStudent(new Student(imie1, nazwisko, wiek1));
+          
+          service.addStudent(new Student(imie1, nazwisko, wiek1, datauro1));
           break;
           
         case"4":
         System.out.println("Zamykam program");
         System.exit(0);
+          
       return;
         default:
           System.out.println("Niepoprawna akcja");
