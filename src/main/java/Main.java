@@ -16,8 +16,10 @@ class Main {
         String imie = scanner.nextLine();
         System.out.println("Podaj wiek studenta:");
         int wiek = scanner.nextInt();
+          String nazwisko1 = scanner.nextLine();
+           System.out.println("Podaj nazwisko studenta:");
         scanner.nextLine();
-      service.addStudent(new Student(imie, wiek));
+      service.addStudent(new Student(imie, nazwisko1, wiek));
       break;
        case"2":
         var students = service.getStudents();
@@ -25,6 +27,21 @@ class Main {
         System.out.println(student.ToString());
       }
       break;
+          case"3":
+          System.out.println("Podaj imie:");
+          String imie1 = scanner.nextLine();
+
+          System.out.println("Podaj nazwisko");
+          String nazwisko = scanner.nextLine();
+
+          System.out.println("Podaj wiek:");
+          int wiek1 = scanner.nextInt();
+          scanner.nextLine();
+
+          String nazwa = imie1 + " " + nazwisko;
+          service.addStudent(new Student(imie1, nazwisko, wiek1));
+          break;
+          
         case"4":
         System.out.println("Zamykam program");
         System.exit(0);
